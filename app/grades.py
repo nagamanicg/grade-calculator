@@ -28,19 +28,21 @@ class Grades(BaseModel):
         """
         Returns a formatted string of the grades.
         """
-        grades_list = []
+        grades = []
         if self.quiz_1 > 0:
-            grades_list.append(f'Quiz 1: {self.quiz_1}')
+            grades.append(f'Quiz 1: {self.quiz_1}')
         if self.quiz_2 > 0:
-            grades_list.append(f'Quiz 2: {self.quiz_2}')
+            grades.append(f'Quiz 2: {self.quiz_2}')
         if self.midterm > 0:
-            grades_list.append(f'Midterm Exam: {self.midterm}')
+            grades.append(f'Midterm Exam: {self.midterm}')
         if self.project > 0:
-            grades_list.append(f'Project: {self.project}')
+            grades.append(f'Project: {self.project}')
         if self.final > 0:
-            grades_list.append(f'Final Exam: {self.final}')
+            grades.append(f'Final Exam: {self.final}')
         
-        if not grades_list:
+        if len(grades) <= 0:
             return 'No grades submitted yet.'
         else:
-            return 'GRADES --- ' + ', '.join(grades_list)
+            # Create a string in which each element of the list
+            # is separate by a comma
+            return 'GRADES --- ' + ', '.join(grades)
