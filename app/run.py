@@ -7,11 +7,11 @@ from grade_calculator import GradeCalculator
 # This runs the grade calculation.
 
 # Instatiate Grade and Weights objects
-my_grades = Grades()
+my_grades=Grades.from_json_file('grades.json')
 weights = GradeWeights()
 
 # Set grades achieved so far
-my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
+# my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
 
 # Print out the grades to console
 print(my_grades)
